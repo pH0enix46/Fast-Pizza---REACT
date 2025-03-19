@@ -1,0 +1,70 @@
+/*  */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+@layer components {
+  .input {
+    border-radius: 100px;
+    border: 1px solid #d6d3d1;
+    background-color: #d6d3d1;
+    padding: 6px 16px;
+    font-size: 0.875rem;
+    transition: all 0.3s ease-in-out;
+  }
+  .input::placeholder {
+    color: #a8a29e;
+  }
+  .input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #facc15;
+  }
+
+  /* ⏺ https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+  .loader {
+    width: 45px;
+    aspect-ratio: 0.75;
+    --c: no-repeat linear-gradient(theme(colors.stone.600) 0 0);
+    /* ⏺ theme(colors.stone.600) tailwind way */
+    background:
+      var(--c) 0% 50%,
+      var(--c) 50% 50%,
+      var(--c) 100% 50%;
+    background-size: 20% 50%;
+    animation: loading 1s infinite linear;
+  }
+  @keyframes loading {
+    20% {
+      background-position:
+        0% 0%,
+        50% 50%,
+        100% 50%;
+    }
+    40% {
+      background-position:
+        0% 100%,
+        50% 0%,
+        100% 50%;
+    }
+    60% {
+      background-position:
+        0% 50%,
+        50% 100%,
+        100% 0%;
+    }
+    80% {
+      background-position:
+        0% 50%,
+        50% 50%,
+        100% 100%;
+    }
+  }
+}
